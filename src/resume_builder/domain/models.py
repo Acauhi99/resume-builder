@@ -62,6 +62,7 @@ class Certificacao(BaseModel):
     nome: str = Field(min_length=2)
     emissor: str = Field(min_length=2)
     ano: str | None = None
+    link: str | None = None
 
 
 class Idioma(BaseModel):

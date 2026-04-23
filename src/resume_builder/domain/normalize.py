@@ -118,6 +118,7 @@ def normalize_resume(resume: Resume) -> Resume:
                         "nome": _clean_text(c.nome),
                         "emissor": _clean_text(c.emissor),
                         "ano": _clean_text(c.ano),
+                        "link": _clean_text(c.link),
                     }
                 )
                 for c in resume.certificacoes

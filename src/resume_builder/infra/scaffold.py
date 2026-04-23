@@ -10,29 +10,29 @@ SAMPLE_YAML = """contato:
   titulo: Engenheira de Software
   email: ana.silva@email.com
   telefone: +55 11 90000-0000
-  localizacao: Sao Paulo, SP
+  localizacao: São Paulo, SP
   linkedin: https://linkedin.com/in/ana-silva
   github: https://github.com/ana-silva
 
 resumo: >
   Engenheira de software com foco em backend e produtos digitais,
-  com historico de entrega de features criticas e melhoria de performance.
+  com histórico de entrega de features críticas e melhoria de performance.
 
 experiencias:
   - empresa: Inova Tech
     cargo: Software Engineer
-    localizacao: Sao Paulo, SP
+    localizacao: São Paulo, SP
     inicio: "2022-03"
     fim: "2024-12"
     bullets:
       - Implementei pipeline de dados que reduziu o tempo de processamento em 38%.
-      - Liderei migracao de servicos para arquitetura orientada a eventos.
+      - Liderei migração de serviços para arquitetura orientada a eventos.
       - Desenvolvi testes automatizados elevando cobertura de 61% para 82%.
     tecnologias: [Python, FastAPI, PostgreSQL, Docker]
 
 educacao:
   - instituicao: Universidade Federal X
-    curso: Bacharelado em Ciencia da Computacao
+    curso: Bacharelado em Ciência da Computação
     inicio: "2017"
     fim: "2021"
 
@@ -44,10 +44,10 @@ skills:
   - CI/CD
 
 projetos:
-  - nome: Plataforma de Relatorios Operacionais
-    resumo: Produto interno para monitoramento de indicadores de negocio em tempo real.
+  - nome: Plataforma de Relatórios Operacionais
+    resumo: Produto interno para monitoramento de indicadores de negócio em tempo real.
     bullets:
-      - Construi APIs e jobs que processam mais de 2 milhoes de eventos por dia.
+      - Construí APIs e jobs que processam mais de 2 milhões de eventos por dia.
       - Reduzi custo de infraestrutura em 22% com tuning de consultas e cache.
     link: https://github.com/ana-silva/projeto-relatorios
     tecnologias: [Python, Redis, PostgreSQL]
@@ -58,10 +58,10 @@ certificacoes:
     ano: "2023"
 
 idiomas:
-  - idioma: Portugues
+  - idioma: Português
     nivel: Nativo
-  - idioma: Ingles
-    nivel: Avancado
+  - idioma: Inglês
+    nivel: Avançado
 """
 
 SAMPLE_TEMPLATE = """<!DOCTYPE html>
@@ -69,7 +69,7 @@ SAMPLE_TEMPLATE = """<!DOCTYPE html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Curriculo - {{ resume.contato.nome }}</title>
+    <title>Currículo - {{ resume.contato.nome }}</title>
     <style>
       :root {
         --body-font-pt: {{ css_tokens.body_font_pt }}pt;
@@ -106,7 +106,7 @@ SAMPLE_TEMPLATE = """<!DOCTYPE html>
 
           {% if resume.experiencias %}
           <section aria-labelledby="experiencia">
-            <h2 id="experiencia" class="label">Experiencia</h2>
+            <h2 id="experiencia" class="label">Experiência</h2>
 
             {% for exp in resume.experiencias %}
             <article class="entry">
@@ -193,7 +193,7 @@ SAMPLE_TEMPLATE = """<!DOCTYPE html>
 
           {% if resume.educacao %}
           <section aria-labelledby="educacao">
-            <h2 id="educacao" class="label">Educacao</h2>
+            <h2 id="educacao" class="label">Educação</h2>
             {% for edu in resume.educacao %}
             <article class="edu-item">
               <p class="edu-course">{{ edu.curso }}</p>
@@ -207,10 +207,12 @@ SAMPLE_TEMPLATE = """<!DOCTYPE html>
 
           {% if resume.certificacoes %}
           <section aria-labelledby="certs">
-            <h2 id="certs" class="label">Certificacoes</h2>
+            <h2 id="certs" class="label">Certificações</h2>
             {% for cert in resume.certificacoes %}
             <article class="edu-item">
-              <p class="edu-course">{{ cert.nome }}</p>
+              <p class="edu-course">
+                {% if cert.link %}<a href="{{ cert.link }}" class="cert-link">{{ cert.nome }}</a>{% else %}{{ cert.nome }}{% endif %}
+              </p>
               <p class="edu-inst">{{ cert.emissor }}</p>
               {% if cert.ano %}<p class="edu-period">{{ cert.ano }}</p>{% endif %}
             </article>
@@ -296,7 +298,7 @@ body {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 1.4rem;
-  align-items: end;
+  align-items: start;
 }
 
 .identity h1 {
@@ -490,7 +492,7 @@ section + section {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
-  margin-top: 0.46rem;
+  margin-top: 0.62rem;
 }
 
 .chip {
@@ -529,6 +531,16 @@ section + section {
   color: var(--ink);
   font-size: calc(var(--body-font-pt) * 0.9);
   font-weight: 600;
+}
+
+.cert-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cert-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .edu-inst {

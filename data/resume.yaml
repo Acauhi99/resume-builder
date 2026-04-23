@@ -1,57 +1,109 @@
 contato:
-  nome: Ana Silva
-  titulo: Engenheira de Software
-  email: ana.silva@email.com
-  telefone: +55 11 90000-0000
-  localizacao: Sao Paulo, SP
-  linkedin: https://linkedin.com/in/ana-silva
-  github: https://github.com/ana-silva
+  nome: Mateus Acauhi
+  titulo: Software Engineer
+  email: acauhi.mateus@gmail.com
+  localizacao: Juiz de Fora - Minas Gerais - Brasil
+  linkedin: https://www.linkedin.com/in/acauhi/
+  github: https://github.com/Acauhi99
 
 resumo: >
-  Engenheira de software com foco em backend e produtos digitais,
-  com historico de entrega de features criticas e melhoria de performance.
+  Engenheiro de software full stack com foco em backend, plataforma e cloud.
+  Construo sistemas em produção para alto volume de requisições, da arquitetura
+  de APIs REST ao deploy em Kubernetes com IaC em Terraform. Atuo principalmente
+  com Node.js, Python, Go e Elixir, usando observabilidade, testes e boas
+  práticas de entrega para gerar impacto real no produto e no negócio.
 
 experiencias:
-  - empresa: Inova Tech
-    cargo: Software Engineer
-    localizacao: Sao Paulo, SP
-    inicio: "2022-03"
-    fim: "2024-12"
+  - empresa: Blue Media Services (BMS)
+    cargo: Engenheiro de Software
+    localizacao: Remoto · São Paulo, Brasil
+    inicio: "2025-09"
+    atual: true
     bullets:
-      - Implementei pipeline de dados que reduziu o tempo de processamento em 38%.
-      - Liderei migracao de servicos para arquitetura orientada a eventos.
-      - Desenvolvi testes automatizados elevando cobertura de 61% para 82%.
-    tecnologias: [Python, FastAPI, PostgreSQL, Docker]
+      - Configurei dashboards e alertas de observabilidade para sistemas distribuídos em produção, reduzindo o tempo médio de detecção de incidentes.
+      - Desenvolvi testes de integração para rotas críticas, aumentando a confiabilidade dos deploys.
+      - Contribuí para a evolução da arquitetura de microsserviços, participando das decisões de design técnico com o time.
+      - Otimizei performance de aplicações frontend, reduzindo em 500ms o tempo de carregamento de telas críticas.
+    tecnologias: [Node.js, TypeScript, React, AWS, Microsserviços, Terraform]
+  - empresa: Blue Media Services (BMS)
+    cargo: Desenvolvedor de Software
+    localizacao: Remoto · São Paulo, Brasil
+    inicio: "2024-09"
+    fim: "2025-09"
+    bullets:
+      - Provisionei infraestrutura AWS com Terraform para APIs RESTful, garantindo ambientes reproduzíveis entre dev, staging e produção.
+      - Desenvolvi e mantive APIs REST com Node.js e TypeScript atendendo cerca de 50.000 requisições por dia com uptime de 99%.
+      - Construí interfaces web com React integradas a serviços backend, cobrindo funcionalidades centrais do produto.
+      - Implementei estratégias de observabilidade para sistemas distribuídos com coleta de métricas e logs estruturados.
+      - Escrevi testes automatizados unitários e de integração seguindo práticas de TDD.
+    tecnologias: [Node.js, TypeScript, React, AWS, Microsserviços, Terraform]
 
 educacao:
-  - instituicao: Universidade Federal X
-    curso: Bacharelado em Ciencia da Computacao
-    inicio: "2017"
-    fim: "2021"
+  - instituicao: Instituto Vianna Júnior
+    curso: Tecnólogo em Computer Systems Analysis
+    inicio: "2023-06"
+    fim: "2025-06"
 
 skills:
+  - Node.js
+  - Golang
+  - Elixir
   - Python
-  - FastAPI
-  - SQL
-  - Arquitetura de Software
-  - CI/CD
+  - React
+  - Vue.js
+  - PostgreSQL
+  - MongoDB
+  - Memgraph
+  - Docker
+  - Kubernetes
+  - Terraform
+  - AWS
+  - GitOps
+  - ArgoCD
+  - Helm
+  - Grafana
 
 projetos:
-  - nome: Plataforma de Relatorios Operacionais
-    resumo: Produto interno para monitoramento de indicadores de negocio em tempo real.
+  - nome: Organizer
+    resumo: Plataforma unificada para importar texto, registrar tarefas e gastos, e acompanhar execução operacional e financeira em um único painel.
     bullets:
-      - Construi APIs e jobs que processam mais de 2 milhoes de eventos por dia.
-      - Reduzi custo de infraestrutura em 22% com tuning de consultas e cache.
-    link: https://github.com/ana-silva/projeto-relatorios
-    tecnologias: [Python, Redis, PostgreSQL]
+      - Importe linhas em segundos com pré-visualização, validação por item e correção guiada antes de salvar.
+      - Habilitei colaboração entre contas por convite de link para compartilhamento seguro de despesas.
+      - Consolidei operação e analytics no mesmo dashboard com visão de saldo, execução diária e tendências.
+    link: https://organizer-acauhi.fly.dev/
+    tecnologias: [Docker, Elixir, LiveView, JavaScript, SQLite]
+  - nome: TrackPath
+    resumo: Encurtador de links com redirecionamento em milissegundos e analytics em tempo real para campanhas digitais.
+    bullets:
+      - Entreguei encurtamento de URLs com HTTPS e foco em segurança de dados ponta a ponta.
+      - Implementei visão em tempo real de cliques por país, cidade e dispositivo para otimização de conversão.
+      - Mantive experiência responsiva e sem fricção em mobile, tablet e desktop.
+    link: https://trackpath.com.br/
+    tecnologias: [AWS, Docker, Python, FastAPI, Redis, PostgreSQL, Vue.js]
+  - nome: Hoje é Honde
+    resumo: Plataforma para descobrir eventos e lugares em tempo real na cidade, com descoberta personalizada e criação de planos com amigos.
+    bullets:
+      - Criei experiência de descoberta em tempo real para identificar locais movimentados e a vibe de cada lugar.
+      - Estruturei fluxo para criação e compartilhamento de planos em grupo, facilitando coordenação social.
+      - Organizei navegação por eventos atuais para acelerar a decisão do usuário.
+    link: https://www.hojeehonde.com/
+    tecnologias: [React Native, Kubernetes, ArgoCD, Helm, Vue.js, Golang, MongoDB, Memgraph]
 
 certificacoes:
   - nome: AWS Cloud Practitioner
-    emissor: Amazon Web Services
-    ano: "2023"
+    emissor: Amazon Web Services (AWS)
+    link: https://cp.certmetrics.com/amazon/en/public/verify/credential/377d1803bbc94308b985654730b203c1
+  - nome: The Last Algorithms Course You'll Need
+    emissor: Frontend Masters
+    link: https://static.frontendmasters.com/ud/c/9905da51be/aPVwjxMZsP/algorithms.pdf
+  - nome: Curso de Docker para produção
+    emissor: Full Cycle
+    link: https://fullcycle.com.br/certificado/56db5b60-8026-4930-90b2-1c248334b2b7/
 
 idiomas:
-  - idioma: Portugues
+  - idioma: Português
     nivel: Nativo
-  - idioma: Ingles
-    nivel: Avancado
+  - idioma: Inglês
+    nivel: Avançado (C2)
+  - idioma: Espanhol
+    nivel: Intermediário

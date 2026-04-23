@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Curriculo - {{ resume.contato.nome }}</title>
+    <title>Currículo - {{ resume.contato.nome }}</title>
     <style>
       :root {
         --body-font-pt: {{ css_tokens.body_font_pt }}pt;
@@ -40,7 +40,7 @@
 
           {% if resume.experiencias %}
           <section aria-labelledby="experiencia">
-            <h2 id="experiencia" class="label">Experiencia</h2>
+            <h2 id="experiencia" class="label">Experiência</h2>
 
             {% for exp in resume.experiencias %}
             <article class="entry">
@@ -127,7 +127,7 @@
 
           {% if resume.educacao %}
           <section aria-labelledby="educacao">
-            <h2 id="educacao" class="label">Educacao</h2>
+            <h2 id="educacao" class="label">Educação</h2>
             {% for edu in resume.educacao %}
             <article class="edu-item">
               <p class="edu-course">{{ edu.curso }}</p>
@@ -141,10 +141,12 @@
 
           {% if resume.certificacoes %}
           <section aria-labelledby="certs">
-            <h2 id="certs" class="label">Certificacoes</h2>
+            <h2 id="certs" class="label">Certificações</h2>
             {% for cert in resume.certificacoes %}
             <article class="edu-item">
-              <p class="edu-course">{{ cert.nome }}</p>
+              <p class="edu-course">
+                {% if cert.link %}<a href="{{ cert.link }}" class="cert-link">{{ cert.nome }}</a>{% else %}{{ cert.nome }}{% endif %}
+              </p>
               <p class="edu-inst">{{ cert.emissor }}</p>
               {% if cert.ano %}<p class="edu-period">{{ cert.ano }}</p>{% endif %}
             </article>
