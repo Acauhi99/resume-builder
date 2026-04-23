@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculo - {{ resume.contato.nome }}</title>
+    <style>
+      :root {
+        --body-font-pt: {{ css_tokens.body_font_pt }}pt;
+        --heading-font-pt: {{ css_tokens.heading_font_pt }}pt;
+        --line-height: {{ css_tokens.line_height }};
+      }
+    </style>
+    <style>{{ css }}</style>
+  </head>
+  <body>
+    <div class="sheet">
+      <header class="topbar">
+        <div class="identity">
+          <h1>{{ resume.contato.nome }}</h1>
+          <p class="subtitle">{{ resume.contato.titulo }}</p>
+        </div>
+
+        <ul class="contact" aria-label="Contato">
+          <li><strong>Email</strong> <a href="mailto:{{ resume.contato.email }}">{{ resume.contato.email }}</a></li>
+          {% if resume.contato.telefone %}<li><strong>Tel</strong> {{ resume.contato.telefone }}</li>{% endif %}
+          {% if resume.contato.localizacao %}<li><strong>Local</strong> {{ resume.contato.localizacao }}</li>{% endif %}
+          {% if resume.contato.linkedin %}<li><a href="{{ resume.contato.linkedin }}">LinkedIn</a></li>{% endif %}
+          {% if resume.contato.github %}<li><a href="{{ resume.contato.github }}">GitHub</a></li>{% endif %}
+          {% if resume.contato.website %}<li><a href="{{ resume.contato.website }}">Website</a></li>{% endif %}
+        </ul>
+      </header>
+
+      <div class="layout">
+        <main class="content">
+          <section aria-labelledby="sumario">
+            <h2 id="sumario" class="label">Resumo</h2>
+            <p class="summary">{{ resume.resumo }}</p>
+          </section>
+
+          {% if resume.experiencias %}
+          <section aria-labelledby="experiencia">
+            <h2 id="experiencia" class="label">Experiencia</h2>
+
+            {% for exp in resume.experiencias %}
+            <article class="entry">
+              <div class="entry-head">
+                <h3>{{ exp.cargo }}</h3>
+                <p class="period">{{ exp.inicio }} - {% if exp.atual %}Presente{% else %}{{ exp.fim }}{% endif %}</p>
+              </div>
+
+              <p class="company-line">
+                <span class="company">{{ exp.empresa }}</span>
+                {% if exp.localizacao %}<span class="location">{{ exp.localizacao }}</span>{% endif %}
+              </p>
+
+              {% if exp.resumo %}<p class="entry-resume">{{ exp.resumo }}</p>{% endif %}
+
+              {% if exp.bullets %}
+              <ul class="dash-list">
+                {% for bullet in exp.bullets %}
+                <li>{{ bullet }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+              {% if exp.tecnologias %}
+              <div class="chips">
+                {% for tech in exp.tecnologias %}
+                <span class="chip">{{ tech }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </article>
+            {% endfor %}
+          </section>
+          {% endif %}
+
+          {% if resume.projetos %}
+          <section aria-labelledby="projetos">
+            <h2 id="projetos" class="label">Projetos</h2>
+
+            {% for projeto in resume.projetos %}
+            <article class="entry entry-project">
+              <p class="project-line">
+                <span class="project-name">{{ projeto.nome }}</span>
+                {% if projeto.link %}<a href="{{ projeto.link }}" class="project-link">↗ link</a>{% endif %}
+              </p>
+
+              <p class="project-summary">{{ projeto.resumo }}</p>
+
+              {% if projeto.bullets %}
+              <ul class="dash-list">
+                {% for bullet in projeto.bullets %}
+                <li>{{ bullet }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+              {% if projeto.tecnologias %}
+              <div class="chips">
+                {% for tech in projeto.tecnologias %}
+                <span class="chip">{{ tech }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </article>
+            {% endfor %}
+          </section>
+          {% endif %}
+        </main>
+
+        <aside class="sidebar">
+          {% if resume.skills %}
+          <section aria-labelledby="skills">
+            <h2 id="skills" class="label">Habilidades</h2>
+            <div class="skill-box">
+              <p class="group-title">Stack</p>
+              <div class="chips">
+                {% for skill in resume.skills %}
+                <span class="chip">{{ skill }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          </section>
+          {% endif %}
+
+          {% if resume.educacao %}
+          <section aria-labelledby="educacao">
+            <h2 id="educacao" class="label">Educacao</h2>
+            {% for edu in resume.educacao %}
+            <article class="edu-item">
+              <p class="edu-course">{{ edu.curso }}</p>
+              <p class="edu-inst">{{ edu.instituicao }}</p>
+              <p class="edu-period">{{ edu.inicio }} - {{ edu.fim or 'Atual' }}</p>
+              {% if edu.detalhes %}<p class="edu-details">{{ edu.detalhes }}</p>{% endif %}
+            </article>
+            {% endfor %}
+          </section>
+          {% endif %}
+
+          {% if resume.certificacoes %}
+          <section aria-labelledby="certs">
+            <h2 id="certs" class="label">Certificacoes</h2>
+            {% for cert in resume.certificacoes %}
+            <article class="edu-item">
+              <p class="edu-course">{{ cert.nome }}</p>
+              <p class="edu-inst">{{ cert.emissor }}</p>
+              {% if cert.ano %}<p class="edu-period">{{ cert.ano }}</p>{% endif %}
+            </article>
+            {% endfor %}
+          </section>
+          {% endif %}
+
+          {% if resume.idiomas %}
+          <section aria-labelledby="idiomas">
+            <h2 id="idiomas" class="label">Idiomas</h2>
+            {% for lang in resume.idiomas %}
+            <div class="language-row">
+              <span class="language">{{ lang.idioma }}</span>
+              <span class="level">{{ lang.nivel }}</span>
+            </div>
+            {% endfor %}
+          </section>
+          {% endif %}
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>

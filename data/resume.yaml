@@ -1,0 +1,57 @@
+contato:
+  nome: Ana Silva
+  titulo: Engenheira de Software
+  email: ana.silva@email.com
+  telefone: +55 11 90000-0000
+  localizacao: Sao Paulo, SP
+  linkedin: https://linkedin.com/in/ana-silva
+  github: https://github.com/ana-silva
+
+resumo: >
+  Engenheira de software com foco em backend e produtos digitais,
+  com historico de entrega de features criticas e melhoria de performance.
+
+experiencias:
+  - empresa: Inova Tech
+    cargo: Software Engineer
+    localizacao: Sao Paulo, SP
+    inicio: "2022-03"
+    fim: "2024-12"
+    bullets:
+      - Implementei pipeline de dados que reduziu o tempo de processamento em 38%.
+      - Liderei migracao de servicos para arquitetura orientada a eventos.
+      - Desenvolvi testes automatizados elevando cobertura de 61% para 82%.
+    tecnologias: [Python, FastAPI, PostgreSQL, Docker]
+
+educacao:
+  - instituicao: Universidade Federal X
+    curso: Bacharelado em Ciencia da Computacao
+    inicio: "2017"
+    fim: "2021"
+
+skills:
+  - Python
+  - FastAPI
+  - SQL
+  - Arquitetura de Software
+  - CI/CD
+
+projetos:
+  - nome: Plataforma de Relatorios Operacionais
+    resumo: Produto interno para monitoramento de indicadores de negocio em tempo real.
+    bullets:
+      - Construi APIs e jobs que processam mais de 2 milhoes de eventos por dia.
+      - Reduzi custo de infraestrutura em 22% com tuning de consultas e cache.
+    link: https://github.com/ana-silva/projeto-relatorios
+    tecnologias: [Python, Redis, PostgreSQL]
+
+certificacoes:
+  - nome: AWS Cloud Practitioner
+    emissor: Amazon Web Services
+    ano: "2023"
+
+idiomas:
+  - idioma: Portugues
+    nivel: Nativo
+  - idioma: Ingles
+    nivel: Avancado
